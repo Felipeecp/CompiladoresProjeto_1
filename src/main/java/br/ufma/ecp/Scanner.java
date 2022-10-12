@@ -25,6 +25,8 @@ public class Scanner {
         keywords.put("if",   TokenType.IF);
         keywords.put("class", CLASS);
         keywords.put("constructor", CONSTRUCTOR);
+        keywords.put("print", PRINT);
+
     }
 
     
@@ -47,7 +49,7 @@ public class Scanner {
 
         skipWhitespace();
         skipLineComments();
-        skipBlockComments();
+//        skipBlockComments();
 
         start = current;
         char ch = peek();

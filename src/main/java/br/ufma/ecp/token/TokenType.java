@@ -22,8 +22,11 @@ public enum TokenType {
      CONSTRUCTOR,
 
      EOF,
-
-     ILLEGAL;
+    LET,
+    EQ,
+    SEMICOLON,
+     ILLEGAL,
+    PRINT;
 
      static public boolean isSymbol (char c) {
         String symbols = "{}()[].,;+-*/&|<>=~";
@@ -38,7 +41,8 @@ public enum TokenType {
                 WHILE,
                 IF,
                 CLASS,
-                CONSTRUCTOR
+                CONSTRUCTOR,
+                PRINT
             );
             return keywords.contains(type);
     }
