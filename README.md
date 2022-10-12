@@ -1,2 +1,2 @@
-# CompiladoresProjeto_1
-Projeto de tradutor de sintaxe desenvolvido na disciplina de Compiladores, do curso de Engenharia da Computação da UFMA - 2022.2
+mvn package
+java -cp target/jackcompiler-1.0-SNAPSHOT.jar br.ufma.ecp.App
