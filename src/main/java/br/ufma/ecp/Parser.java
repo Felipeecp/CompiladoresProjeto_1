@@ -37,6 +37,7 @@ public class Parser {
     void statements () {
 
         while (currentToken.type != TokenType.EOF) {
+            System.out.println("Current token " + currentToken.type);
             statement();
         }
     }
@@ -66,9 +67,13 @@ public class Parser {
     }
 
    private void match(TokenType t) {
+
         if (currentToken.type == t) {
             nextToken();
-        }else {
+        } else if (TokenType.isSymbol(currentToken.lexeme.charAt(0))) {
+
+        }
+        else {
             throw new Error("syntax error");
         }
    }
