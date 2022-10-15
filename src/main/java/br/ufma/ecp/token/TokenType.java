@@ -4,47 +4,83 @@ import java.util.List;
 import java.util.Map;
 
 public enum TokenType {
-    PLUS,MINUS,
+    PLUS("operacao", "+"),
+    MINUS("operacao", "-"),
 
      // Literals.
-     NUMBER,
-     STRING,
+    NUMBER("integerConstant", "valueNumber"),
+    STRING("stringConst", "valueString"),
+    IDENTIFIER("identifier", "sequenceOfLeters"),
 
+     // keyword
+    CLASS("keyword", "class"),
+    CONSTRUCTOR("keyword","constructor"),
+    FUNCTION("keyword", "function"),
+    METHOD("keyword", "method"),
+    FIELD("keyword", "field"),
+    STATIC("keyword", "static"),
+    VAR("keyword", "var"),
+    INT("keyword", "int"),
+    CHAR("keyword", "char"),
+    BOOLEAN("keyword", "boolean"),
+    VOID("keyword", "void"),
+    TRUE("keyword", "true"),
+    FALSE("keyword", "false"),
+    NULL("keyword", "null"),
+    THIS("keyword", "this"),
+    LET("keyword", "let"),
+    DO("keyword", "do"),
+    IF("keyword", "if"),
+    ELSE("keyword", "else"),
+    WHILE("keyword", "while"),
+    RETURN("keyword", "return"),
+    EOF("system", "fim"),
 
-     IDENT,
+    ILLEGAL("system", "illegal"),
+    SYMBOL("symbol", "symbolCharacter");
 
- 
-     // keywords
-     METHOD,
-     WHILE,
-     IF,
-     CLASS,
-     CONSTRUCTOR,
+    public final String tipo;
+    public final String lexeme;
 
-     EOF,
-    LET,
-    EQ,
-    SEMICOLON,
-     ILLEGAL,
-    PRINT;
+    public String getTipo(){
+        return tipo;
+    }
+
+    private TokenType(String tipo, String lexeme) {
+        this.tipo = tipo;
+        this.lexeme = lexeme;
+    }
 
      static public boolean isSymbol (char c) {
         String symbols = "{}()[].,;+-*/&|<>=~";
         return symbols.indexOf(c) > -1;
     }
 
-
-    static public boolean isKeyword (TokenType type) {
-        List<TokenType> keywords  = 
-            List.of(
-                METHOD,
-                WHILE,
-                IF,
-                CLASS,
-                CONSTRUCTOR,
-                PRINT
-            );
-            return keywords.contains(type);
+    static public String getSymbol(char c){
+        switch (c){
+            case '<' -> {
+                return "&lt;";
+            }
+            case '>' -> {
+                return "&gt;";
+            }
+            case '&' -> {
+                return "&amp;";
+            }
+            default -> {
+                return String.valueOf(c);
+            }
+        }
     }
+
+    public static TokenType valueOfLexeme(String lexeme) {
+        for (TokenType e : values()) {
+            if (e.lexeme.equals(lexeme)) {
+                return e;
+            }
+        }
+        return null;
+    }
+
 
 }

@@ -2,7 +2,8 @@ package br.ufma.ecp.token;
 public class Token {
 
     public final TokenType type;
-    public final String lexeme;
+    public String lexeme;
+
 
     public Token (TokenType type, String lexeme) {
         this.type = type;
@@ -11,23 +12,15 @@ public class Token {
 
     public String toString() {
         var type = this.type.toString();
-        if (type.equals("NUMBER"))
-            type =  "intConst";
 
-        if (type.equals("STRING"))
-            type =  "stringConst";
-
-        if (type.equals("IDENT"))
-            type =  "identifier";
-
-        if (TokenType.isSymbol(lexeme.charAt(0)))
+        if (TokenType.isSymbol(lexeme.charAt(0))){
             type = "symbol";
+            lexeme = TokenType.getSymbol(lexeme.charAt(0));
+        } else {
+            type = this.type.getTipo();
+        }
 
-        if (TokenType.isKeyword(this.type) )
-            type = "keyword";
-    
-
-        return "<"+ type +">" + lexeme + "</"+ type + ">";
+        return "<"+ type +"> " + lexeme + " </"+ type + ">";
     }
     
 }
