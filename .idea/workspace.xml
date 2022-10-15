@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Square/SquareGame.jack" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Square/SquareGame.jack" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +40,90 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager" selected="JUnit.ScannerTest.testScannerWithSquare">
+    <configuration name="ScannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jackcompiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufma.ecp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ufma.ecp" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ScannerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScannerTest.testScannerWithSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jackcompiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufma.ecp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ufma.ecp" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ScannerTest" />
+      <option name="METHOD_NAME" value="testScannerWithSquare" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScannerTest.testScannerWithSquareGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jackcompiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufma.ecp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ufma.ecp" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ScannerTest" />
+      <option name="METHOD_NAME" value="testScannerWithSquareGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScannerTest.testSimple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jackcompiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufma.ecp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ufma.ecp" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ScannerTest" />
+      <option name="METHOD_NAME" value="testSimple" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ScannerTest.testScannerWithSquare" />
+        <item itemvalue="JUnit.ScannerTest.testScannerWithSquareGame" />
+        <item itemvalue="JUnit.ScannerTest.testSimple" />
+        <item itemvalue="JUnit.ScannerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
