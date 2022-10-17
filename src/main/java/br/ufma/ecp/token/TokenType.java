@@ -46,7 +46,7 @@ public enum TokenType {
         return tipo;
     }
 
-    private TokenType(String tipo, String lexeme) {
+    TokenType(String tipo, String lexeme) {
         this.tipo = tipo;
         this.lexeme = lexeme;
     }
