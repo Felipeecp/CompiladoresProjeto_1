@@ -60,47 +60,106 @@ public class Scanner {
 
         skipWhitespace();
 
-        skipLineComentario();
-        skipBlockComments();
-
         start = current;
         char ch = peek();
-
-        //  NÃO GOSTEI DESSE IF, mas ele funciona legal
-        if(ch == '\n' || ch == ' '|| ch == '\r') {
-            return nextToken();
-        }
 
         if (Character.isDigit(ch)) {
             return number();
         }
 
-        if (isAlpha(ch)) {
+        if (Character.isLetter(ch)) {
             return identifier();
         }
 
-        if(TokenType.isSymbol(ch)) {
-            advance();
-            return new Token(SYMBOL, String.valueOf(ch));
-        }
 
-        // Essa parte ta estranha ainda
 
         switch (ch) {
-            case '+':
-                advance();
-                return new Token (PLUS,"+");
-            case '-':
-                advance();
-                return new Token (MINUS,"-");
+
+
             case '"':
                 return string();
+
+            case '/':
+                if (peekNext() == '/') {
+                    skipLineComentario();
+                    return nextToken();
+                } else if (peekNext() == '*') {
+                    skipBlockComments();
+                    return nextToken();
+                }
+                else {
+                    advance();
+                    return new Token (TokenType.SLASH,"/");
+                }
+
+            case '+':
+                advance();
+                return new Token (TokenType.PLUS,"+");
+            case '-':
+                advance();
+                return new Token (TokenType.MINUS,"-");
+            case '*':
+                advance();
+                return new Token (TokenType.ASTERISK,"*");
+            case '.':
+                advance();
+                return new Token (TokenType.DOT,".");
+            case '&':
+                advance();
+                return new Token (TokenType.AND,"&");
+            case '|':
+                advance();
+                return new Token (TokenType.OR,"|");
+            case '~':
+                advance();
+                return new Token (TokenType.NOT,"~");
+
+
+            case '>':
+                advance();
+                return new Token (TokenType.GT,">");
+            case '<':
+                advance();
+                return new Token (TokenType.LT,"<");
+            case '=':
+                advance();
+                return new Token (TokenType.EQ,"=");
+
+            case '(':
+                advance();
+                return new Token (TokenType.LPAREN,"(");
+            case ')':
+                advance();
+                return new Token (TokenType.RPAREN,")");
+            case '{':
+                advance();
+                return new Token (TokenType.LBRACE,"{");
+            case '}':
+                advance();
+                return new Token (TokenType.RBRACE,"}");
+            case '[':
+                advance();
+                return new Token (TokenType.LBRACKET,"[");
+            case ']':
+                advance();
+                return new Token (TokenType.RBRACKET,"]");
+            case ';':
+                advance();
+                return new Token (TokenType.SEMICOLON,";");
+            case ',':
+                advance();
+                return new Token (TokenType.COMMA,",");
+
             case 0:
-                return new Token (EOF,"EOF");
+                return new Token(TokenType.EOF, "EOF");
             default:
                 advance();
-                return new Token(ILLEGAL, Character.toString(ch));
+                return new Token(TokenType.ILLEGAL, Character.toString(ch));
         }
+
+
+
+
     }
 
     private Token identifier() {

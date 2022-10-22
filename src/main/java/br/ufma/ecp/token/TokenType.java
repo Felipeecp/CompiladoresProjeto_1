@@ -38,16 +38,22 @@ public enum TokenType {
 
     ILLEGAL("system", "illegal"),
     SYMBOL("symbol", "symbolCharacter"),
-    IDENT,
-    EQ,
-    SEMICOLON,
-    PRINT,
-    LPAREN,
-    RPAREN,
-    LBRACE,
-    RBRACE,
-    DOT,
-    COMMA;
+    EQ("symbol","="),
+    SEMICOLON("symbol",";"),
+    PRINT("keyword","print"),
+    LPAREN("symbol","("),
+    RPAREN("symbol",")"),
+    LBRACE("symbol","["),
+    RBRACE("symbol","]"),
+    DOT("symbol","."),
+    COMMA("symbol",","),
+    ASTERISK("symbol", "*"),
+    AND("symbol", "&"),
+    OR("symbol", "|"), NOT("symbol", "~"),
+    GT("symbol", ">"),
+    LT("symbol", "<"),
+    LBRACKET("symbol", "{"),
+    RBRACKET("symbol","}" ), SLASH("symbol", "/");
 
     public final String tipo;
     public final String lexeme;
