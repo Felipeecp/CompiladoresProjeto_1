@@ -22,31 +22,18 @@ public class App
         return "";
     } 
 
-    public static void main( String[] args )
-    {
-
-        
+    public static void main( String[] args ) {
         String input = """
                 class Main {
                    field int x,y;
-                   static boolean b; 
+                   static boolean b;
+                   static int a = 20;
+                   field int x = 10;
+                   function void teste(){};
                 }
                 """;
         Parser p = new Parser(input.getBytes());
         p.parser();
         System.out.println(p.XMLOutput());
-
-        
-        //String input = "45 preco2 + 96";
-
-
-        /*
-        Scanner scan = new Scanner(fromFile().getBytes());
-        System.out.println("<tokens>");        
-        for (Token tk = scan.nextToken(); tk.type != EOF; tk = scan.nextToken()) {
-            System.out.println(tk);
-        }
-        System.out.println("</tokens>");        
-        */
     }
 }

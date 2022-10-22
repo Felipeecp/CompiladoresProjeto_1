@@ -35,28 +35,66 @@ public class Parser {
         expectPeek(CLASS);
         expectPeek(IDENTIFIER);
         expectPeek(LBRACE);
-        while (peekToken.type == FIELD || peekToken.type == STATIC) {
-            parseClassVardec();
-        }
+
+        // A classe pode ter fields; static and funtions/construct/methods
+        classVardec();
+        subroutineDec();
+
         
         expectPeek(RBRACE);
         printNonTerminal("/class");
     }
+    void parseSubroutineDec(){
+        printNonTerminal("subroutineDec");
+            expectPeek(FUNCTION);
+            expectPeek(INT, CHAR, BOOLEAN, IDENTIFIER, VOID);
+            expectPeek(IDENTIFIER);
+            expectPeek(LPAREN);
+            expectPeek(RPAREN);
+            expectPeek(LBRACE);
+            classVardec();
+            expectPeek(RBRACE);
+            expectPeek(SEMICOLON);
+        printNonTerminal("/subroutineDec");
+    }
+
     //( 'static' | 'field' ) type varName ( ',' varName)* ';'
     void parseClassVardec() {
         printNonTerminal("classVarDec");
         expectPeek(FIELD, STATIC);
         expectPeek(INT, CHAR, BOOLEAN, IDENTIFIER);
         expectPeek(IDENTIFIER);
-        while (peekToken.type == COMMA) {
-            expectPeek(COMMA);
-            expectPeek(IDENTIFIER);
+        switch (peekToken.type) {
+            case COMMA -> {
+                while (peekToken.type == COMMA) {
+                    expectPeek(COMMA);
+                    expectPeek(IDENTIFIER);
+                }
+            }
+            case EQ -> {
+                // pode inicializar a variável
+                // exemplo: static int x = 10;
+                // exemplo: field int a = b;
+                expectPeek(EQ);
+                expectPeek(NUMBER, STRING, BOOLEAN);
+            }
         }
         expectPeek(SEMICOLON);
         printNonTerminal("/classVarDec");
     }
 
-   
+    void subroutineDec(){
+        if(peekToken.type == FUNCTION) {
+            parseSubroutineDec();
+        }
+    }
+
+    void classVardec(){
+        while (peekToken.type == FIELD || peekToken.type == STATIC) {
+            parseClassVardec();
+        }
+    }
+
 
     // letStatement -> 'let' varName  '=' term ';'
     // term -> number;
