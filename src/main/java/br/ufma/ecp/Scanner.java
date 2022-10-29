@@ -133,16 +133,16 @@ public class Scanner {
                 return new Token (TokenType.RPAREN,")");
             case '{':
                 advance();
-                return new Token (TokenType.LBRACE,"{");
+                return new Token (TokenType.LBRACE,"[");
             case '}':
                 advance();
-                return new Token (TokenType.RBRACE,"}");
+                return new Token (TokenType.RBRACE,"]");
             case '[':
                 advance();
-                return new Token (TokenType.LBRACKET,"[");
+                return new Token (TokenType.LBRACKET,"{");
             case ']':
                 advance();
-                return new Token (TokenType.RBRACKET,"]");
+                return new Token (TokenType.RBRACKET,"}");
             case ';':
                 advance();
                 return new Token (TokenType.SEMICOLON,";");

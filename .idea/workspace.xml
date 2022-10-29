@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser">
+    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Atualização Parse - Adicionando arquivos capitulo 6 corretos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +35,12 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.ParserTest.testParseLet">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.App" />
       <module name="jackcompiler" />
@@ -131,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.ParserTest.testParseLet" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.ParserTest.testParseLetSimple" />
         <item itemvalue="JUnit.ScannerTest.testScannerWithSquare" />
         <item itemvalue="JUnit.ScannerTest.testScannerWithSquareGame" />
