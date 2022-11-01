@@ -6,15 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Atualização Parse - Adicionando arquivos capitulo 6 corretos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,12 +54,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "nodejs_package_manager_path": "npm"
-  }
-}]]></component>
-  <component name="RunManager" selected="JUnit.ParserTest.testParseLet">
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.ufma.ecp.parser" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.App" />
       <module name="jackcompiler" />
@@ -131,8 +154,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParserTest.testParseLet" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.ParserTest.testParseLet" />
         <item itemvalue="JUnit.ParserTest.testParseLetSimple" />
         <item itemvalue="JUnit.ScannerTest.testScannerWithSquare" />
         <item itemvalue="JUnit.ScannerTest.testScannerWithSquareGame" />

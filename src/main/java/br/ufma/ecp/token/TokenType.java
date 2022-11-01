@@ -34,6 +34,7 @@ public enum TokenType {
     ELSE("keyword", "else"),
     WHILE("keyword", "while"),
     RETURN("keyword", "return"),
+    NEW("keyword", "new"),
     EOF("system", "fim"),
 
     ILLEGAL("system", "illegal"),
@@ -49,11 +50,13 @@ public enum TokenType {
     COMMA("symbol",","),
     ASTERISK("symbol", "*"),
     AND("symbol", "&"),
-    OR("symbol", "|"), NOT("symbol", "~"),
+    OR("symbol", "|"),
+    NOT("symbol", "~"),
     GT("symbol", ">"),
     LT("symbol", "<"),
     LBRACKET("symbol", "{"),
-    RBRACKET("symbol","}" ), SLASH("symbol", "/");
+    RBRACKET("symbol","}" ),
+    SLASH("symbol", "/");
 
     public final String tipo;
     public final String lexeme;

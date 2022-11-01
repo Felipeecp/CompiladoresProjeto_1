@@ -29,7 +29,28 @@ public class App
                    static boolean b;
                    static int a = 20;
                    field int x = 10;
-                   function void teste(){};
+                   
+                   constructor Square new() {
+                         return this;
+                   }
+                   
+                   constructor Square new(int Ax, int Ay, int Asize) {
+                         let x = Ax;
+                         let y = Ay;
+                         let size = Asize;
+                         do draw();
+                         do draw.drawCirculo();
+                         return this;
+                   }
+                      
+                   method void moveLeft(int Ax, int Ay, int Asize) {
+                        do draw();
+                        let x = Ax;
+                        let y = Ay;
+                        do draw.drawCirculo();
+                        let size = Asize;
+                        return;
+                   }
                 }
                 """;
         Parser p = new Parser(input.getBytes());
