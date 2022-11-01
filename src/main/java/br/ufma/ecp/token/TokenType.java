@@ -101,5 +101,10 @@ public enum TokenType {
         return null;
     }
 
+    static public boolean isOperator(TokenType type) {
+        return "+-*/<>=~&|".contains(type.getTipo());
+    }
+
+
 
 }

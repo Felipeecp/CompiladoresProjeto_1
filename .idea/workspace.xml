@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Adicionado statements para simplicicar a classe parser">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Segment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -49,10 +59,12 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/projetos/compiladores/CompiladoresProjeto_1"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.ufma.ecp.parser" />
@@ -168,6 +180,8 @@
       <workItem from="1666199696289" duration="408000" />
       <workItem from="1666406481399" duration="171000" />
       <workItem from="1666439973176" duration="1283000" />
+      <workItem from="1667267083519" duration="8000" />
+      <workItem from="1667267103411" duration="4035000" />
     </task>
     <task id="LOCAL-00001" summary="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser">
       <created>1666200075931</created>
