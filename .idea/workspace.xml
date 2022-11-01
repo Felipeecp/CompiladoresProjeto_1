@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Atualização Parse - Adicionando arquivos capitulo 6 corretos">
+    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Adicionado statements para simplicicar a classe parser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666200075931</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionado statements para simplicicar a classe parser">
+      <created>1667265808605</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667265808605</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +203,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Atualizando analisador sintatico - Parse (com erros)" />
     <MESSAGE value="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser" />
+    <MESSAGE value="Adicionado statements para simplicicar a classe parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado statements para simplicicar a classe parser" />
   </component>
 </project>
