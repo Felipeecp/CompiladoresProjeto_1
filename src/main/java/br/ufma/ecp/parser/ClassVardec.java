@@ -11,15 +11,16 @@ public class ClassVardec extends SyntaxyParser{
         super(parser, xmlOutput);
     }
 
-    public void parseClassVarDec (){
-        while (getPeekToken().type == FIELD || getPeekToken().type == STATIC) {
+    public void parseClassVarDec () {
+        while (getPeekTokenType() == FIELD || getPeekTokenType() == STATIC) {
             printNonTerminal("classVarDec");
             expectPeek(FIELD, STATIC);
             expectPeek(INT, CHAR, BOOLEAN, IDENTIFIER);
             expectPeek(IDENTIFIER);
-            switch (getPeekToken().type) {
+
+            switch (getPeekTokenType()) {
                 case COMMA -> {
-                    while (getPeekToken().type == COMMA) {
+                    while (getPeekTokenType() == COMMA) {
                         expectPeek(COMMA);
                         expectPeek(IDENTIFIER);
                     }
@@ -29,6 +30,7 @@ public class ClassVardec extends SyntaxyParser{
                     expectPeek(NUMBER, STRING, BOOLEAN);
                 }
             }
+
             expectPeek(SEMICOLON);
             printNonTerminal("/classVarDec");
         }

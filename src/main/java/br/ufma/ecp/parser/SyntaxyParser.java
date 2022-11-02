@@ -6,7 +6,7 @@ import br.ufma.ecp.token.TokenType;
 
 public abstract class SyntaxyParser {
 
-    private StringBuilder xmlOutput = new StringBuilder();
+    private StringBuilder xmlOutput;
 
     private Parser parser;
 
@@ -15,30 +15,30 @@ public abstract class SyntaxyParser {
         this.xmlOutput = xmlOutput;
     }
 
-    Token getPeekToken(){
-        return parser.getPeekToken();
-    }
-
     Token getCurrentToken() {
         return parser.getCurrentToken();
     }
 
-    TokenType getTokenType() {
+    String getPeekTokenLexeme(){
+        return parser.getPeekToken().lexeme;
+    }
+
+    TokenType getPeekTokenType() {
         return parser.getPeekToken().type;
     }
 
     protected void expectPeek (TokenType type) {
-        if (getPeekToken().type == type ) {
+        if (getPeekTokenType() == type ) {
             parser.nextToken();
             xmlOutput.append(String.format("%s\r\n", getCurrentToken().toString()));
         } else {
-            throw new Error("Syntax error - expected "+type+" found " + getPeekToken().lexeme);
+            throw new Error("Syntax error - expected "+type+" found " + getPeekTokenLexeme());
         }
     }
 
     protected void expectPeek(TokenType... types) {
         for (TokenType type : types) {
-            if (getPeekToken().type == type) {
+            if (getPeekTokenType() == type) {
                 expectPeek(type);
                 return;
             }

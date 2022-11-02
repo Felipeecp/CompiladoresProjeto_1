@@ -5,6 +5,7 @@ import br.ufma.ecp.parser.ClassDef;
 import br.ufma.ecp.parser.ClassVardec;
 import br.ufma.ecp.parser.SubroutineDec;
 
+// TODO -> MELHORAR
 public class FacadeSyntaxy {
 
     private StringBuilder xmlOutput;

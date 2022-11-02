@@ -1,11 +1,7 @@
 package br.ufma.ecp;
 
-import static br.ufma.ecp.token.TokenType.*;
-import static br.ufma.ecp.token.TokenType.RBRACKET;
-
 import br.ufma.ecp.parser.facade.FacadeSyntaxy;
 import br.ufma.ecp.token.Token;
-import br.ufma.ecp.token.TokenType;
 
 public class Parser {
 
@@ -20,6 +16,10 @@ public class Parser {
         facadeSyntaxy = new FacadeSyntaxy(this);
     }
 
+    void parser () {
+        facadeSyntaxy.parseClass();
+    }
+
     public Token getPeekToken() {
         return peekToken;
     }
@@ -31,10 +31,6 @@ public class Parser {
     public void nextToken() {
         currentToken = peekToken;
         peekToken = scan.nextToken();
-    }
-
-    void parser () {
-        facadeSyntaxy.parseClass();
     }
 
     public String XMLOutput() {
