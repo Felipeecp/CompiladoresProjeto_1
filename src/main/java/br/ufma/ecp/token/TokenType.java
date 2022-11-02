@@ -75,23 +75,6 @@ public enum TokenType {
         return symbols.indexOf(c) > -1;
     }
 
-    static public String getSymbol(char c){
-        switch (c){
-            case '<' -> {
-                return "&lt;";
-            }
-            case '>' -> {
-                return "&gt;";
-            }
-            case '&' -> {
-                return "&amp;";
-            }
-            default -> {
-                return String.valueOf(c);
-            }
-        }
-    }
-
     public static TokenType valueOfLexeme(String lexeme) {
         for (TokenType e : values()) {
             if (e.lexeme.equals(lexeme)) {
@@ -102,7 +85,7 @@ public enum TokenType {
     }
 
     static public boolean isOperator(TokenType type) {
-        return "+-*/<>=~&|".contains(type.getTipo());
+        return "+-*/<>=~&|".contains(type.lexeme);
     }
 
 

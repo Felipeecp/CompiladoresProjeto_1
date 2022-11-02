@@ -41,8 +41,4 @@ public class Parser {
         return facadeSyntaxy.XMLOutput();
     }
 
-    public String VMOutput(){
-        return facadeSyntaxy.VMOutput();
-    }
-
 }

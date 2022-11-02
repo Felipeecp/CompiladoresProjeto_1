@@ -26,10 +26,8 @@ public class Token {
 
         } else if (categoria.equals("number")) {
             categoria = "integerConstant";
-        } else if (TokenType.getSymbol(lexeme.charAt(0)) != null) {
+        } else {
             categoria = "keyword";
-        } else if (categoria.equals("string")) {
-            categoria = "stringConstant";
         }
         return "<" + categoria + "> " + valor  + " </" + categoria + ">";
     }

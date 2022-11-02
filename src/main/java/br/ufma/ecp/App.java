@@ -51,6 +51,16 @@ public class App
                         let size = Asize;
                         return;
                    }
+                   
+                   
+                   method void incSize() {
+                         if (((y + size) < 254) & ((x + size) < 510)) {
+                            do erase();
+                            let size = size + 2;
+                            do draw();
+                         }
+                         return;
+                      }
                 }
                 """;
         Parser p = new Parser(input.getBytes());

@@ -1,21 +1,18 @@
 package br.ufma.ecp.parser;
 
 import br.ufma.ecp.Parser;
-import br.ufma.ecp.VMWriter;
 import br.ufma.ecp.token.Token;
 import br.ufma.ecp.token.TokenType;
 
 public abstract class SyntaxyParser {
 
     private StringBuilder xmlOutput = new StringBuilder();
-    private VMWriter vmWrite = new VMWriter();
 
     private Parser parser;
 
-    public SyntaxyParser(Parser parser, StringBuilder xmlOutput, VMWriter vmWrite) {
+    public SyntaxyParser(Parser parser, StringBuilder xmlOutput) {
         this.parser = parser;
         this.xmlOutput = xmlOutput;
-        this.vmWrite = vmWrite;
     }
 
     Token getPeekToken(){
