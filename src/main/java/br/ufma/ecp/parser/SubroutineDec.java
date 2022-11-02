@@ -57,7 +57,7 @@ public class SubroutineDec extends SyntaxyParser {
     }
 
     void parseStatements () {
-        System.out.println("<statements>");
+        printNonTerminal("statements");
         while (getTokenType() == WHILE ||
                 getTokenType() == IF ||
                 getTokenType() == LET ||
@@ -66,7 +66,7 @@ public class SubroutineDec extends SyntaxyParser {
             parseStatement();
         }
 
-        System.out.println("</statements>");
+        printNonTerminal("statements");
     }
 
     void parseStatement () {

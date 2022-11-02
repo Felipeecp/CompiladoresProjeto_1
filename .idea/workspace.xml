@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Atualizando SubroutineDec e adicionando novas classes">
+    <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Lidando com expressões - analisador lexico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Segment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +177,7 @@
       <workItem from="1667267103411" duration="4035000" />
       <workItem from="1667302269467" duration="429000" />
       <workItem from="1667343779823" duration="879000" />
-      <workItem from="1667344672037" duration="8268000" />
+      <workItem from="1667344672037" duration="9874000" />
     </task>
     <task id="LOCAL-00001" summary="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser">
       <created>1666200075931</created>
@@ -210,7 +200,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667302632990</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lidando com expressões">
+      <created>1667353110926</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667353110926</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Lidando com expressões - analisador lexico">
+      <created>1667353191170</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667353191170</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,16 +236,13 @@
     <MESSAGE value="Atualizando analisador sintatico - Parse (Com erros)&#10;&#10;Necessario ajuste no TokenType e Criar métodos não encontrados no Parser" />
     <MESSAGE value="Adicionado statements para simplicicar a classe parser" />
     <MESSAGE value="Atualizando SubroutineDec e adicionando novas classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualizando SubroutineDec e adicionando novas classes" />
+    <MESSAGE value="Lidando com expressões" />
+    <MESSAGE value="Lidando com expressões - analisador lexico" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lidando com expressões - analisador lexico" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
           <line>217</line>
