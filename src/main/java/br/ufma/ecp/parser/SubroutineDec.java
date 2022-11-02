@@ -56,7 +56,7 @@ public class SubroutineDec extends SyntaxyParser {
     }
 
     void parseStatements () {
-        System.out.println("<statements>");
+        printNonTerminal("<statements>");
         while (getPeekTokenType() == WHILE ||
                 getPeekTokenType() == IF ||
                 getPeekTokenType() == LET ||
@@ -64,7 +64,7 @@ public class SubroutineDec extends SyntaxyParser {
                 getPeekTokenType()== RETURN ) {
             parseStatement();
         }
-        System.out.println("</statements>");
+        printNonTerminal("</statements>");
     }
 
     void parseStatement () {
@@ -114,14 +114,18 @@ public class SubroutineDec extends SyntaxyParser {
         expectPeek(LPAREN);
         parseExpression();
         expectPeek(RPAREN);
+
         expectPeek(LBRACKET);
         parseStatements();
         expectPeek(RBRACKET);
 
         if (getPeekTokenType() == ELSE) {
             expectPeek(ELSE);
+
             expectPeek(LBRACKET);
+
             parseStatements();
+
             expectPeek(RBRACKET);
         }
 
@@ -135,8 +139,8 @@ public class SubroutineDec extends SyntaxyParser {
         if (!(getPeekTokenType() == SEMICOLON)) {
             parseExpression();
         }
-
         expectPeek(SEMICOLON);
+
         printNonTerminal("/returnStatement");
     }
 
@@ -160,7 +164,6 @@ public class SubroutineDec extends SyntaxyParser {
             parseExpression();
             expectPeek(RBRACKET);
         }
-
         expectPeek(EQ);
         parseExpression();
         expectPeek(SEMICOLON);
@@ -215,7 +218,6 @@ public class SubroutineDec extends SyntaxyParser {
             expectPeek(getPeekTokenType());
             parseTerm();
         }
-
         printNonTerminal("/expression");
     }
 
@@ -257,9 +259,11 @@ public class SubroutineDec extends SyntaxyParser {
         } else {
             expectPeek(DOT);
             expectPeek(IDENTIFIER);
+
             expectPeek(LPAREN);
             parseExpressionList();
             expectPeek(RPAREN);
         }
+
     }
 }
