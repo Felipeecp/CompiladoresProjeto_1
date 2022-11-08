@@ -37,6 +37,26 @@ public class Parser {
         facadeSyntaxy.parseClass();
     }
 
+    public void parseSubroutineDec(){
+        facadeSyntaxy.parseSubroutine();
+    }
+
+    public void parseClassVarDec(){
+        facadeSyntaxy.parseClassVarDec();
+    }
+
+    void parserLet(){
+        facadeSyntaxy.parserLet();
+    }
+
+    void parseIf(){
+        facadeSyntaxy.parseIf();
+    }
+
+    void parseDo(){
+        facadeSyntaxy.parseDo();
+    }
+
     public String XMLOutput() {
         return facadeSyntaxy.XMLOutput();
     }

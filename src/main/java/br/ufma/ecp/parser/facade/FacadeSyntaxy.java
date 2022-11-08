@@ -28,7 +28,19 @@ public class FacadeSyntaxy {
     }
 
     public void parseSubroutine(){
-        subroutineDec.parseSubroutineDec();
+        subroutineDec.varMethod();
+    }
+
+    public void parserLet(){
+        subroutineDec.parseLet();
+    }
+
+    public void parseIf(){
+        subroutineDec.parseIf();
+    }
+
+    public void parseDo(){
+        subroutineDec.parseDo();
     }
 
     public String XMLOutput() {

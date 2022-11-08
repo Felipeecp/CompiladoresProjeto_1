@@ -26,6 +26,8 @@ public class Token {
 
         } else if (categoria.equals("number")) {
             categoria = "integerConstant";
+        } else if (categoria.equals("identifier")) {
+            categoria = "identifier";
         } else {
             categoria = "keyword";
         }

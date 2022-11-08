@@ -34,7 +34,6 @@ public enum TokenType {
     ELSE("keyword", "else"),
     WHILE("keyword", "while"),
     RETURN("keyword", "return"),
-    NEW("keyword", "new"),
     EOF("system", "fim"),
 
     ILLEGAL("system", "illegal"),
