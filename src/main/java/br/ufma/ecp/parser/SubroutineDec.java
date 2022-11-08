@@ -14,13 +14,13 @@ public class SubroutineDec extends SyntaxyParser {
 
     public void parseSubroutineDec() {
 
-        while (getPeekToken().equals(METHOD) || getPeekToken().equals(CONSTRUCTOR)) {
+        while (getPeekTokenType().equals(METHOD) || getPeekTokenType().equals(CONSTRUCTOR)) {
             varMethod();
         }
     }
 
     public void varMethod() {
-        TokenType tokeMethod = getTokenType();
+        TokenType tokeMethod = getPeekTokenType();
         printNonTerminal("subroutineDec");
 
         if (tokeMethod.equals(METHOD)) {
@@ -47,7 +47,7 @@ public class SubroutineDec extends SyntaxyParser {
     private void parseSubroutineBody(){
         printNonTerminal("subroutineBody");
         expectPeek(LBRACKET);
-        while (getTokenType() == VAR){
+        while (getPeekTokenType() == VAR){
             parseVarDec();
         }
 
@@ -58,11 +58,11 @@ public class SubroutineDec extends SyntaxyParser {
 
     void parseStatements () {
         printNonTerminal("statements");
-        while (getTokenType() == WHILE ||
-                getTokenType() == IF ||
-                getTokenType() == LET ||
-                getTokenType() == DO ||
-                getTokenType()== RETURN ) {
+        while (getPeekTokenType() == WHILE ||
+                getPeekTokenType() == IF ||
+                getPeekTokenType() == LET ||
+                getPeekTokenType() == DO ||
+                getPeekTokenType()== RETURN ) {
             parseStatement();
         }
 
@@ -70,7 +70,7 @@ public class SubroutineDec extends SyntaxyParser {
     }
 
     void parseStatement () {
-        switch (getTokenType()) {
+        switch (getPeekTokenType()) {
             case LET -> parseLet();
             case WHILE -> parseWhile();
             case IF -> parseIf();
@@ -100,7 +100,7 @@ public class SubroutineDec extends SyntaxyParser {
         expectPeek(INT,CHAR,BOOLEAN,IDENTIFIER);
         expectPeek(IDENTIFIER);
 
-        while (getTokenType() == COMMA) {
+        while (getPeekTokenType() == COMMA) {
             expectPeek(COMMA);
             expectPeek(IDENTIFIER);
         }
@@ -121,7 +121,7 @@ public class SubroutineDec extends SyntaxyParser {
         parseStatements();
         expectPeek(RBRACKET);
 
-        if (getTokenType() == ELSE)
+        if (getPeekTokenType() == ELSE)
         {
             expectPeek(ELSE);
 
@@ -138,7 +138,7 @@ public class SubroutineDec extends SyntaxyParser {
     void parseReturn() {
         printNonTerminal("returnStatement");
         expectPeek(RETURN);
-        if (!(getTokenType() == SEMICOLON)) {
+        if (!(getPeekTokenType() == SEMICOLON)) {
             parseExpression();
         }
         expectPeek(SEMICOLON);
@@ -161,7 +161,7 @@ public class SubroutineDec extends SyntaxyParser {
         expectPeek(LET);
         expectPeek(IDENTIFIER);
 
-        if(getTokenType() == LBRACKET){
+        if(getPeekTokenType() == LBRACKET){
             expectPeek(LBRACKET);
             parseExpression();
             expectPeek(RBRACKET);
@@ -171,7 +171,7 @@ public class SubroutineDec extends SyntaxyParser {
         expectPeek(SEMICOLON);
         printNonTerminal("/letStatement");
 
-        if(getPeekToken().equals(LET)) {
+        if(getPeekTokenType().equals(LET)) {
             parseLet();
         }
     }
@@ -181,12 +181,12 @@ public class SubroutineDec extends SyntaxyParser {
 
         var nArgs = 0;
 
-        if(!(getTokenType() == RPAREN)){
+        if(!(getPeekTokenType() == RPAREN)){
            parseExpression();
            nArgs = 1;
         }
 
-        while (getTokenType() == COMMA){
+        while (getPeekTokenType() == COMMA){
             expectPeek(COMMA);
             parseExpression();
             nArgs++;
@@ -199,11 +199,11 @@ public class SubroutineDec extends SyntaxyParser {
 
     private void parameterList() {
         printNonTerminal("parameterList");
-        switch (getTokenType()) {
+        switch (getPeekTokenType()) {
             case INT, CHAR, BOOLEAN, STRING -> {
                 expectPeek(INT, STRING, BOOLEAN, CHAR);
                 expectPeek(IDENTIFIER);
-                while (getTokenType() == COMMA) {
+                while (getPeekTokenType() == COMMA) {
                     expectPeek(COMMA);
                     expectPeek(INT, STRING, BOOLEAN, CHAR);
                     expectPeek(IDENTIFIER);
@@ -216,8 +216,8 @@ public class SubroutineDec extends SyntaxyParser {
     private void parseExpression(){
         printNonTerminal("expression");
         parseTerm();
-        while(isOperator(getTokenType())){
-            expectPeek(getTokenType());
+        while(isOperator(getPeekTokenType())){
+            expectPeek(getPeekTokenType());
             parseTerm();
         }
         printNonTerminal("/expression");
@@ -225,7 +225,7 @@ public class SubroutineDec extends SyntaxyParser {
 
     private void parseTerm(){
         printNonTerminal("term");
-        switch (getTokenType()){
+        switch (getPeekTokenType()){
             case NUMBER -> {
                 expectPeek(NUMBER);
             }
@@ -241,10 +241,10 @@ public class SubroutineDec extends SyntaxyParser {
             }
             case IDENTIFIER -> {
                 expectPeek(IDENTIFIER);
-                if(getTokenType() == LPAREN || getTokenType() == DOT){
+                if(getPeekTokenType() == LPAREN || getPeekTokenType() == DOT){
                     parseSubroutineCall();
                 }else{
-                    if(getTokenType()==LBRACKET){
+                    if(getPeekTokenType()==LBRACKET){
                         expectPeek(LBRACKET);
                         parseExpression();
                         expectPeek(RBRACKET);
@@ -266,7 +266,7 @@ public class SubroutineDec extends SyntaxyParser {
 
     private void parseSubroutineCall(){
 
-        if (getTokenType() == LPAREN) {
+        if (getPeekTokenType() == LPAREN) {
             expectPeek(LPAREN);
             parseExpressionList();
             expectPeek(RPAREN);

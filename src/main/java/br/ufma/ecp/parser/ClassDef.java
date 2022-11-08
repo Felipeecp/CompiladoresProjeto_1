@@ -17,11 +17,11 @@ public class ClassDef extends SyntaxyParser{
         expectPeek(CLASS);
         expectPeek(IDENTIFIER);
         expectPeek(LBRACKET);
-        while (getTokenType()==STATIC || getTokenType() == FIELD){
+        while (getPeekTokenType()==STATIC || getPeekTokenType() == FIELD){
             facadeSyntaxy.parseClassVarDec();
         }
 
-        while(getTokenType()==FUNCTION || getTokenType()==CONSTRUCTOR ||getTokenType()==METHOD){
+        while(getPeekTokenType()==FUNCTION || getPeekTokenType()==CONSTRUCTOR ||getPeekTokenType()==METHOD){
             facadeSyntaxy.parseSubroutine();
         }
         expectPeek(RBRACKET);
