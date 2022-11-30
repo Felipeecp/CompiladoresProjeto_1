@@ -1,6 +1,8 @@
 package br.ufma.ecp.parser.facade;
 
 import br.ufma.ecp.Parser;
+import br.ufma.ecp.SymbolTable;
+import br.ufma.ecp.VMWriter;
 import br.ufma.ecp.parser.ClassDef;
 import br.ufma.ecp.parser.ClassVardec;
 import br.ufma.ecp.parser.SubroutineDec;
@@ -13,12 +15,20 @@ public class FacadeSyntaxy {
     private ClassVardec classVardec;
     private SubroutineDec subroutineDec;
 
+    private SymbolTable symbolTable;
+
+    private VMWriter vmWriter;
+
+
     public FacadeSyntaxy(Parser parser) {
         xmlOutput = new StringBuilder();
-        classDef = new ClassDef(parser, xmlOutput);
-        classVardec = new ClassVardec(parser, xmlOutput);
-        subroutineDec = new SubroutineDec(parser, xmlOutput);
+        symbolTable = new SymbolTable();
+        vmWriter = new VMWriter();
+        classDef = new ClassDef(parser, symbolTable,vmWriter,xmlOutput);
+        classVardec = new ClassVardec(parser, symbolTable,vmWriter,xmlOutput);
+        subroutineDec = new SubroutineDec(parser, symbolTable,vmWriter,xmlOutput);
     }
+
 
     public void parseClass() {
         classDef.parseClass(this);
@@ -48,5 +58,6 @@ public class FacadeSyntaxy {
         return xmlOutput.toString();
     }
 
+    public String vmOutput(){return vmWriter.vmOutput();}
 
 }

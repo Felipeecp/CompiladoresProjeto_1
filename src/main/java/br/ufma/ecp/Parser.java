@@ -14,11 +14,32 @@ public class Parser {
     private Token peekToken;
     private FacadeSyntaxy facadeSyntaxy;
 
+    private String className;
+
+    private VMWriter vmWriter;
+
     public Parser (byte[] input) {
         scan = new Scanner(input);
         nextToken();
         facadeSyntaxy = new FacadeSyntaxy(this);
     }
+
+    public VMWriter getVmWriter() {
+        return vmWriter;
+    }
+
+    public void setVmWriter(VMWriter vmWriter) {
+        this.vmWriter = vmWriter;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
 
     public Token getPeekToken() {
         return peekToken;
@@ -60,5 +81,6 @@ public class Parser {
     public String XMLOutput() {
         return facadeSyntaxy.XMLOutput();
     }
+    public String VMOutput(){return facadeSyntaxy.vmOutput();}
 
 }

@@ -1,6 +1,8 @@
 package br.ufma.ecp.parser;
 
 import br.ufma.ecp.Parser;
+import br.ufma.ecp.SymbolTable;
+import br.ufma.ecp.VMWriter;
 import br.ufma.ecp.parser.facade.FacadeSyntaxy;
 
 import static br.ufma.ecp.token.TokenType.*;
@@ -8,8 +10,8 @@ import static br.ufma.ecp.token.TokenType.RBRACKET;
 
 public class ClassDef extends SyntaxyParser{
 
-    public ClassDef(Parser parser, StringBuilder xmlOutput) {
-        super(parser, xmlOutput);
+    public ClassDef(Parser parser, SymbolTable symbolTable, VMWriter vmWriter, StringBuilder xmlOutput) {
+        super(parser, symbolTable,vmWriter,xmlOutput);
     }
 
     public void parseClass(FacadeSyntaxy facadeSyntaxy) {
@@ -17,6 +19,9 @@ public class ClassDef extends SyntaxyParser{
         expectPeek(CLASS);
         expectPeek(IDENTIFIER);
         expectPeek(LBRACKET);
+        String className = getCurrentTokenType().lexeme;
+        setClassName(className);
+
         while (getPeekTokenType()==STATIC || getPeekTokenType() == FIELD){
             facadeSyntaxy.parseClassVarDec();
         }
