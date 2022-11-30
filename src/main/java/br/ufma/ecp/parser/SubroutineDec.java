@@ -274,38 +274,7 @@ public class SubroutineDec extends SyntaxyParser {
         }
 
         expectPeek(EQ);
-        parseExpression(); // REMOVER ESSE CASO ATIVE O TRUE
-
-        /*
-        SE DESCOMENTAR, remova o parseExpression de cima
-        while (true) {
-
-            parseExpression();
-
-            if(!(getPeekTokenType() == LBRACE)){
-                break;
-            }
-
-            symbol = getSymbolTable().resolve(getCurrentTokeLexeme());
-
-            if(getPeekTokenType() == LBRACE){
-                expectPeek(LBRACE);
-                parseExpression();
-
-                getVmWriter().writePush(kind2Segment(symbol.kind()), symbol.index());
-                getVmWriter().writeArithmetic(Command.ADD);
-
-                expectPeek(RBRACE);
-
-                isArray = true;
-            }
-
-            if((getPeekTokenType() == SEMICOLON)){
-                break;
-            }
-        }
-
-         */
+        parseExpression();
 
         if (isArray) {
             getVmWriter().writePop(Segment.TEMP, 0);
@@ -422,14 +391,14 @@ public class SubroutineDec extends SyntaxyParser {
                 if(getPeekTokenType() == LPAREN || getPeekTokenType() == DOT){
                     parseSubroutineCall();
                 }else{
-                    if(getPeekTokenType()==LBRACKET){
-                        expectPeek(LBRACKET);
+                    if(getPeekTokenType()==LBRACE){
+                        expectPeek(LBRACE);
                         parseExpression();
 
                         getVmWriter().writePush(kind2Segment(sym.kind()), sym.index());
                         getVmWriter().writeArithmetic(Command.ADD);
 
-                        expectPeek(RBRACKET);
+                        expectPeek(RBRACE);
                         getVmWriter().writePop(Segment.POINTER, 1);
                         getVmWriter().writePush(Segment.THAT, 0);
 
