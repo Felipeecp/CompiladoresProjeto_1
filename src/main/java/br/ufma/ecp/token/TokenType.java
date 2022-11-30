@@ -40,7 +40,6 @@ public enum TokenType {
     SYMBOL("symbol", "symbolCharacter"),
     EQ("symbol","="),
     SEMICOLON("symbol",";"),
-    PRINT("keyword","print"),
     LPAREN("symbol","("),
     RPAREN("symbol",")"),
     LBRACE("symbol","["),

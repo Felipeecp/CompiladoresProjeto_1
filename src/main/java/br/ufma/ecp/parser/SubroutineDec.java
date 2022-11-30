@@ -35,12 +35,23 @@ public class SubroutineDec extends SyntaxyParser {
 
         getSymbolTable().startSubroutine();
 
-        var subroutineType = getCurrentTokenType();
+        var subroutineType = getPeekTokenType();
 
-        if (tokeMethod.equals(METHOD)) {
-            getSymbolTable().define("this", getClassName(),  Kind.ARG);
-            expectPeek(METHOD);
+        if (tokeMethod.equals(METHOD) || tokeMethod.equals(FUNCTION)) {
+            if(tokeMethod.equals(METHOD)) {
+                getSymbolTable().define("this", getClassName(),  Kind.ARG);
+                expectPeek(METHOD);
+            } else {
+                expectPeek(FUNCTION);
+            }
+
             expectPeek(INT, CHAR, BOOLEAN, VOID);
+
+            if(getPeekTokenType() == SEMICOLON) {
+                expectPeek(SEMICOLON);
+                expectPeek(INT, CHAR, BOOLEAN, VOID);
+            }
+
             expectPeek(IDENTIFIER);
         } else {
             expectPeek(CONSTRUCTOR);
@@ -48,7 +59,7 @@ public class SubroutineDec extends SyntaxyParser {
             expectPeek(IDENTIFIER);
         }
 
-        var functionName = getClassName() + "." + getCurrentToken().lexeme;
+        var functionName = getClassName() + "." + getCurrentTokeLexeme();
 
         expectPeek(LPAREN);
 
@@ -131,13 +142,13 @@ public class SubroutineDec extends SyntaxyParser {
         getVmWriter().writeIf(labelFalse);
 
         expectPeek(RPAREN);
-        expectPeek(LBRACE);
+        expectPeek(LBRACKET);
         parseStatements();
 
         getVmWriter().writeGoto(labelTrue);
         getVmWriter().writeLabel(labelFalse);
 
-        expectPeek(RBRACE);
+        expectPeek(RBRACKET);
         printNonTerminal("/whileStatement");
 
     }
@@ -149,17 +160,17 @@ public class SubroutineDec extends SyntaxyParser {
         Kind kind = Kind.VAR;
 
         expectPeek(INT,CHAR,BOOLEAN,IDENTIFIER);
-        String type = getCurrentToken().lexeme;
+        String type = getCurrentTokeLexeme();
 
         expectPeek(IDENTIFIER);
-        String name = getCurrentToken().lexeme;
+        String name = getCurrentTokeLexeme();
         getSymbolTable().define(name, type, kind);
 
         while (getPeekTokenType() == COMMA) {
             expectPeek(COMMA);
             expectPeek(IDENTIFIER);
 
-            name = getCurrentToken().lexeme;
+            name = getCurrentTokeLexeme();
             getSymbolTable().define(name, type, kind);
         }
 
@@ -185,9 +196,9 @@ public class SubroutineDec extends SyntaxyParser {
         getVmWriter().writeGoto(labelFalse);
         getVmWriter().writeLabel(labelTrue);
 
-        expectPeek(LBRACE);
+        expectPeek(LBRACKET);
         parseStatements();
-        expectPeek(RBRACE);
+        expectPeek(RBRACKET);
 
 
         if (getPeekTokenType() == ELSE)
@@ -201,11 +212,11 @@ public class SubroutineDec extends SyntaxyParser {
         {
             expectPeek(ELSE);
 
-            expectPeek(LBRACE);
+            expectPeek(LBRACKET);
 
             parseStatements();
 
-            expectPeek(RBRACE);
+            expectPeek(RBRACKET);
             getVmWriter().writeLabel(labelEnd);
         }
 
@@ -248,7 +259,7 @@ public class SubroutineDec extends SyntaxyParser {
         expectPeek(LET);
         expectPeek(IDENTIFIER);
 
-        var symbol = getSymbolTable().resolve(getCurrentToken().lexeme);
+        var symbol = getSymbolTable().resolve(getCurrentTokeLexeme());
 
         if(getPeekTokenType() == LBRACKET){
             expectPeek(LBRACKET);
@@ -312,10 +323,10 @@ public class SubroutineDec extends SyntaxyParser {
         switch (getPeekTokenType()) {
             case INT, CHAR, BOOLEAN, STRING -> {
                 expectPeek(INT, STRING, BOOLEAN, CHAR);
-                String type = getCurrentToken().lexeme;
+                String type = getCurrentTokeLexeme();
 
                 expectPeek(IDENTIFIER);
-                String name = getCurrentToken().lexeme;
+                String name = getCurrentTokeLexeme();
                 getSymbolTable().define(name, type, kind);
 
                 while (getPeekTokenType() == COMMA) {
@@ -324,7 +335,7 @@ public class SubroutineDec extends SyntaxyParser {
                     type = getCurrentTokenType().lexeme;
 
                     expectPeek(IDENTIFIER);
-                    name = getCurrentToken().lexeme;
+                    name = getCurrentTokeLexeme();
 
                     getSymbolTable().define(name, type, kind);
                 }
@@ -350,11 +361,11 @@ public class SubroutineDec extends SyntaxyParser {
         switch (getPeekTokenType()){
             case NUMBER -> {
                 expectPeek(NUMBER);
-                getVmWriter().writePush(Segment.CONST, Integer.parseInt(getCurrentToken().lexeme));
+                getVmWriter().writePush(Segment.CONST, Integer.parseInt(getCurrentTokeLexeme()));
             }
             case STRING -> {
                 expectPeek(STRING);
-                var strValue = getCurrentToken().lexeme;
+                var strValue = getCurrentTokeLexeme();
                 getVmWriter().writePush(Segment.CONST, strValue.length());
                 getVmWriter().writeCall("String.new", 1);
                 for (int i = 0; i < strValue.length(); i++) {
@@ -375,7 +386,7 @@ public class SubroutineDec extends SyntaxyParser {
             }
             case IDENTIFIER -> {
                 expectPeek(IDENTIFIER);
-                SymbolTable.Symbol sym = getSymbolTable().resolve(getCurrentToken().lexeme);
+                SymbolTable.Symbol sym = getSymbolTable().resolve(getCurrentTokeLexeme());
 
                 if(getPeekTokenType() == LPAREN || getPeekTokenType() == DOT){
                     parseSubroutineCall();
@@ -383,15 +394,16 @@ public class SubroutineDec extends SyntaxyParser {
                     if(getPeekTokenType()==LBRACKET){
                         expectPeek(LBRACKET);
                         parseExpression();
+
                         getVmWriter().writePush(kind2Segment(sym.kind()), sym.index());
                         getVmWriter().writeArithmetic(Command.ADD);
 
-
                         expectPeek(RBRACKET);
-                        getVmWriter().writePop(Segment.POINTER, 1); // pop address pointer into pointer 1
-                        getVmWriter().writePush(Segment.THAT, 0);   // push the value of the address pointer back onto stack
+                        getVmWriter().writePop(Segment.POINTER, 1);
+                        getVmWriter().writePush(Segment.THAT, 0);
 
                     } else {
+
                         getVmWriter().writePush(kind2Segment(sym.kind()), sym.index());
                     }
 
@@ -419,7 +431,7 @@ public class SubroutineDec extends SyntaxyParser {
 
         var nArgs = 0;
 
-        var ident = getCurrentToken().lexeme;
+        var ident = getCurrentTokeLexeme();
         var symbol = getSymbolTable().resolve(ident); // classe ou objeto
         var functionName = ident + ".";
 
@@ -436,11 +448,11 @@ public class SubroutineDec extends SyntaxyParser {
             expectPeek(IDENTIFIER);
 
             if (symbol != null) {
-                functionName = symbol.type() + "." + getCurrentToken().lexeme;
+                functionName = symbol.type() + "." + getCurrentTokeLexeme();
                 getVmWriter().writePush(kind2Segment(symbol.kind()), symbol.index());
                 nArgs = 1;
             } else {
-                functionName += getCurrentToken().lexeme;
+                functionName += getCurrentTokeLexeme();
             }
 
             expectPeek(LPAREN);

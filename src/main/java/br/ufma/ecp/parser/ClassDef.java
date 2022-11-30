@@ -17,10 +17,12 @@ public class ClassDef extends SyntaxyParser{
     public void parseClass(FacadeSyntaxy facadeSyntaxy) {
         printNonTerminal("class");
         expectPeek(CLASS);
+
+
         expectPeek(IDENTIFIER);
+        setClassName(getCurrentTokeLexeme());
+
         expectPeek(LBRACKET);
-        String className = getCurrentTokenType().lexeme;
-        setClassName(className);
 
         while (getPeekTokenType()==STATIC || getPeekTokenType() == FIELD){
             facadeSyntaxy.parseClassVarDec();

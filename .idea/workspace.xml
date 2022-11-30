@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Lidando com expressões - analisador lexico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassDef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/facade/FacadeSyntaxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,15 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassDef.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/Parser.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/SymbolTable.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,20 +66,17 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/projetos/compiladores/CompiladoresProjeto_1&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.ufma.ecp.parser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTest">
-    <configuration name="ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GeneratorCodeTest">
+    <configuration name="GeneratorCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
         <pattern>
@@ -78,13 +85,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ufma.ecp" />
-      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ParserTest" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.GeneratorCodeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.testParserWithLessSquareGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneratorCodeTest.arrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
         <pattern>
@@ -93,14 +100,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ufma.ecp" />
-      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ParserTest" />
-      <option name="METHOD_NAME" value="testParserWithLessSquareGame" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.GeneratorCodeTest" />
+      <option name="METHOD_NAME" value="arrayTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.testParserWithSquare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneratorCodeTest.ifElseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
         <pattern>
@@ -109,14 +116,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ufma.ecp" />
-      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ParserTest" />
-      <option name="METHOD_NAME" value="testParserWithSquare" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.GeneratorCodeTest" />
+      <option name="METHOD_NAME" value="ifElseTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.testParserWithSquareGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneratorCodeTest.whileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
         <pattern>
@@ -125,14 +132,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ufma.ecp" />
-      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ParserTest" />
-      <option name="METHOD_NAME" value="testParserWithSquareGame" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.GeneratorCodeTest" />
+      <option name="METHOD_NAME" value="whileTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.testVarDeclaration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneratorCodeTest.writeFunctionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
         <pattern>
@@ -141,8 +148,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ufma.ecp" />
-      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.ParserTest" />
-      <option name="METHOD_NAME" value="testVarDeclaration" />
+      <option name="MAIN_CLASS_NAME" value="br.ufma.ecp.GeneratorCodeTest" />
+      <option name="METHOD_NAME" value="writeFunctionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ParserTest" />
-        <item itemvalue="JUnit.ParserTest.testVarDeclaration" />
-        <item itemvalue="JUnit.ParserTest.testParserWithSquare" />
-        <item itemvalue="JUnit.ParserTest.testParserWithSquareGame" />
-        <item itemvalue="JUnit.ParserTest.testParserWithLessSquareGame" />
+        <item itemvalue="JUnit.GeneratorCodeTest" />
+        <item itemvalue="JUnit.GeneratorCodeTest.writeFunctionTest" />
+        <item itemvalue="JUnit.GeneratorCodeTest.whileTest" />
+        <item itemvalue="JUnit.GeneratorCodeTest.arrayTest" />
+        <item itemvalue="JUnit.GeneratorCodeTest.ifElseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -260,27 +267,87 @@
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>11</line>
+          <properties class="br.ufma.ecp.GeneratorCodeTest" method="arrayTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="16" />
+          <line>75</line>
+          <properties class="br.ufma.ecp.parser.SubroutineDec" method="parseSubroutineBody">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>355</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
+          <line>501</line>
+          <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="17" />
+          <line>97</line>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="24" />
+          <line>83</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="25" />
+          <line>45</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="br.ufma.ecp.parser.SubroutineDec" memberName="parser" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="input" />
+        <watch expression="this" />
+        <watch expression="((VMWriter)((SubroutineDec)this).vmWriter).vmOutput" custom="br.ufma.ecp.VMWriter,br.ufma.ecp.parser.SubroutineDec" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

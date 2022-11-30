@@ -59,6 +59,11 @@ public abstract class SyntaxyParser {
         return parser.getPeekToken().lexeme;
     }
 
+    String getCurrentTokeLexeme() {
+        return parser.getCurrentToken().lexeme;
+    }
+
+
     TokenType getPeekTokenType() {
         return parser.getPeekToken().type;
     }

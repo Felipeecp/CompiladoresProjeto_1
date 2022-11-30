@@ -13,7 +13,7 @@ public class VMWriter {
     }
 
     public void writePop(Segment segment, int index){
-        vmOutput.append(String.format("pop %s %d \n", segment.value, index));
+        vmOutput.append(String.format("pop %s %d\n", segment.value, index));
     }
 
     public void writeArithmetic(Command command){
@@ -37,7 +37,7 @@ public class VMWriter {
     }
 
     public void writeFunction(String name, int nLocals){
-        vmOutput.append(String.format("function %s %d\n"));
+        vmOutput.append(String.format("function %s %d\n", name, nLocals));
     }
 
     public void writeReturn(){

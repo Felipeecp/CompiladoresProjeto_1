@@ -25,10 +25,10 @@ public class ClassVardec extends SyntaxyParser{
             }
 
             expectPeek(INT, CHAR, BOOLEAN, IDENTIFIER);
-            String type = getCurrentTokenType().lexeme;
+            String type = getCurrentTokenType().tipo;
 
             expectPeek(IDENTIFIER);
-            String name = getCurrentTokenType().lexeme;
+            String name = getCurrentTokeLexeme();
 
             getSymbolTable().define(name, type, kind);
 
@@ -38,7 +38,7 @@ public class ClassVardec extends SyntaxyParser{
                         expectPeek(COMMA);
                         expectPeek(IDENTIFIER);
 
-                        name = getCurrentTokenType().lexeme;
+                        name = getCurrentTokeLexeme();
                         getSymbolTable().define(name, type, kind);
                     }
                 }
