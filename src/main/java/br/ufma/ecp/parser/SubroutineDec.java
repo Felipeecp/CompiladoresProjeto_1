@@ -261,20 +261,51 @@ public class SubroutineDec extends SyntaxyParser {
 
         var symbol = getSymbolTable().resolve(getCurrentTokeLexeme());
 
-        if(getPeekTokenType() == LBRACKET){
-            expectPeek(LBRACKET);
+        if(getPeekTokenType() == LBRACE){
+            expectPeek(LBRACE);
             parseExpression();
 
             getVmWriter().writePush(kind2Segment(symbol.kind()), symbol.index());
             getVmWriter().writeArithmetic(Command.ADD);
 
-
-            expectPeek(RBRACKET);
+            expectPeek(RBRACE);
 
             isArray = true;
         }
+
         expectPeek(EQ);
-        parseExpression();
+        parseExpression(); // REMOVER ESSE CASO ATIVE O TRUE
+
+        /*
+        SE DESCOMENTAR, remova o parseExpression de cima
+        while (true) {
+
+            parseExpression();
+
+            if(!(getPeekTokenType() == LBRACE)){
+                break;
+            }
+
+            symbol = getSymbolTable().resolve(getCurrentTokeLexeme());
+
+            if(getPeekTokenType() == LBRACE){
+                expectPeek(LBRACE);
+                parseExpression();
+
+                getVmWriter().writePush(kind2Segment(symbol.kind()), symbol.index());
+                getVmWriter().writeArithmetic(Command.ADD);
+
+                expectPeek(RBRACE);
+
+                isArray = true;
+            }
+
+            if((getPeekTokenType() == SEMICOLON)){
+                break;
+            }
+        }
+
+         */
 
         if (isArray) {
             getVmWriter().writePop(Segment.TEMP, 0);

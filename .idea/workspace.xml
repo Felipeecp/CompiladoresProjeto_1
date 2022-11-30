@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6ef5bcdb-5efa-43df-b193-8eceec244467" name="Changes" comment="Lidando com expressões - analisador lexico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/VMWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/ClassVardec.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufma/ecp/token/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +70,7 @@
       <recent name="br.ufma.ecp.parser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GeneratorCodeTest">
+  <component name="RunManager" selected="JUnit.GeneratorCodeTest.arrayTest">
     <configuration name="GeneratorCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jackcompiler" />
       <extension name="coverage">
@@ -168,10 +163,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GeneratorCodeTest.arrayTest" />
         <item itemvalue="JUnit.GeneratorCodeTest" />
         <item itemvalue="JUnit.GeneratorCodeTest.writeFunctionTest" />
         <item itemvalue="JUnit.GeneratorCodeTest.whileTest" />
-        <item itemvalue="JUnit.GeneratorCodeTest.arrayTest" />
         <item itemvalue="JUnit.GeneratorCodeTest.ifElseTest" />
       </list>
     </recent_temporary>
@@ -267,73 +262,25 @@
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>11</line>
-          <properties class="br.ufma.ecp.GeneratorCodeTest" method="arrayTest">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>75</line>
-          <properties class="br.ufma.ecp.parser.SubroutineDec" method="parseSubroutineBody">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SyntaxyParser.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>355</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/br/ufma/ecp/GeneratorCodeTest.java</url>
-          <line>501</line>
-          <option name="timeStamp" value="96" />
+          <line>23</line>
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="99" />
+          <line>288</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="101" />
+          <line>280</line>
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/br/ufma/ecp/parser/SubroutineDec.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="102" />
+          <line>318</line>
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -347,6 +294,7 @@
         <watch expression="input" />
         <watch expression="this" />
         <watch expression="((VMWriter)((SubroutineDec)this).vmWriter).vmOutput" custom="br.ufma.ecp.VMWriter,br.ufma.ecp.parser.SubroutineDec" />
+        <watch expression="this.xmlOutput" />
       </configuration>
     </watches-manager>
   </component>

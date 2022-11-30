@@ -496,10 +496,18 @@ public class GeneratorCodeTest {
                 function int soma (int x, int y) {
                        return  x + y;
                 }
-            }
+               
+                function void main () {
+                       var int d;
+                       let d = Main.soma(4,5);
+                       return;
+                 }
+               
+               }
             """;;
         var parser = new Parser(input.getBytes(StandardCharsets.UTF_8));
         parser.parser();
+
 
         String actual = parser.VMOutput();
         String expected = """
@@ -507,6 +515,13 @@ public class GeneratorCodeTest {
             push argument 0
             push argument 1
             add
+            return
+            function Main.main 1
+            push constant 4
+            push constant 5
+            call Main.soma 2
+            pop local 0
+            push constant 0
             return
                 """;
         assertEquals(expected, actual);
